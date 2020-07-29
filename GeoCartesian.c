@@ -16,6 +16,7 @@ int main()
 	double Enlem, Boylam;
 	int x, y;
 	double a, b, e2;
+	//double radiusX, radiusY;
 	double N, X, Y, Z;
 
 	/// Bilinenleri isteyelim.
@@ -49,8 +50,8 @@ int main()
 	// Hangi türe dönüştürülmek isteniyor soralım bir.
 	printf("\n=== Lütfen aşağıda belirtildiği gibi değişimin türünü seçiniz! ===\n");
 	printf("'Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm' için 1,\n");
-	printf("3 boyutlu kartezyen koordinatlardan coğrafi koordinatlara dönüşüm için 2, tuşlayınız: \n");
-	scanf("%d", x);
+	printf("'3 boyutlu kartezyen koordinatlardan coğrafi koordinatlara dönüşüm' için 2, tuşlayınız: ");
+	scanf("%d", &x);
 	if (x == 1)
 	{
 			//// Coğrafi Koordinatlardan 3 Boyutlu Kartezyen Koordinatlarına Dönüşüm!!!
@@ -59,8 +60,8 @@ int main()
 		printf("\n=== Lütfen aşağıda belirtildiği gibi datumu seçiniz! ===\n");
 		printf("'ED50 datumu' için 1,\n");
 		printf("'WGS84 datumu' için 2,\n");
-		printf("'GRS80 datumu' için 3, tuşlayınız: \n");
-		scanf("%d", y);
+		printf("'GRS80 datumu' için 3, tuşlayınız: ");
+		scanf("%d", &y);
 		/// Datum Parametreleri;
 		/* ED50 parametreleri;
 		a = 6378388;
@@ -104,12 +105,17 @@ int main()
 		N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
 		/* Kartezyen koordinatlarının hesaplanması
 		X, Y, Z;
-		Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
 		X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
-		Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180))); */
 		Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+		Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));*/
+		//radiusX = (Enlem * ((PI) / 180)) * (PI / 180);
+		//radiusY = (Boylam * ((PI) / 180)) * (PI / 180);
 		X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+		printf("X kartezyen değeri: %f\n", X);
+		Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+		printf("Y kartezyen değeri: %f\n", Y);
 		Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));
+		printf("Z kartezyen değeri: %f\n", Z);
 	}
 	else if (x == 2)
 	{
