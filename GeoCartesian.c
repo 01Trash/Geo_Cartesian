@@ -117,23 +117,48 @@ int main()
 	{
 			////  3 Boyutlu Kartezyen Koordinatlardan Coğrafi Koordinatlara Dönüşüm!!!
 		printf(" === 3 boyutlu kartezyen koordinatlardan coğrafi koordinatlara dönüşüm! === \n");
-		/// Bilinenleri isteyelim.
 				// if parametrisi kullanılacak!!!
-		/* Datum parametreleri
-		ED50 parametreleri;
+		// Hangi datum türü ile hesap yapılacak soralım bakalım bir.
+		printf("\n#=== Lütfen aşağıda belirtildiği gibi datumu seçiniz! ===#\n");
+		printf("'ED50 datumu' için 1,\n");
+		printf("'WGS84 datumu' için 2,\n");
+		printf("'GRS80 datumu' için 3, tuşlayınız: ");
+		scanf("%d", &y);
+		/// Datum Parametreleri;
+		/* ED50 parametreleri;
 		a = 6378388;
 		b = 6356911.9461;
-		e2 = ((Sqrt(((a^2) - (b^2)) / (a^2)))^2);
-		WGS84 parametreleri;
+		e2 =(Sqrt(a^2 - b^2) / a^2)^2; */
+		if (y == 1)
+		{
+			a = 6378388;
+			b = 6356911.9461;
+			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+		}
+		/* WGS84 parametreleri;
 		a = 6378137;
 		b = 6356752.314;
-		e2 =(Sqrt(a^2 - b^2) / a^2)^2;
-		GRS80 parametreleri;
+		e2 =(Sqrt(a^2 - b^2) / a^2)^2; */
+		else if (y == 2)
+		{
+			a = 6378137;
+			b = 6356752.314;
+			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+		}
+		/* GRS80 parametreleri;
 		a = 6378137;
 		b = 6356752.298;
-		e2 =(Sqrt(a^2 - b^2) / a^2)^2;
-		Kartezyen Koordinatları;
-		X, Y, Z; */
+		e2 =(Sqrt(a^2 - b^2) / a^2)^2; */
+		else if (y == 3)
+		{
+			a = 6378137;
+			b = 6356752.298;
+			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+		}
+		else
+		{
+			printf("Yanlış bir değer tuşladınız lütfen baştan yapınız!\n");
+		}
 
 		/// Bilinmeyenlerin hesaplanması.
 		printf("\n\t=== Hesap sonuçları! === \n");
