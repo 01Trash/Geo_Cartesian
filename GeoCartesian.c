@@ -181,6 +181,19 @@ int main()
 				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
 				printf("Enlem: \n", Enlem);
 			}
+				/* Farklı Datumlarda Coğrafi Koordinatlar Hesaplanır (ED50, WGS84, GRS80)
+			Enlem( φ), Boylam (λ), Elipsoid Yüksekliği (H)
+			Enlem = (atan((Z + e2 * N9 * sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI));
+			N = a / (Sqrt(1 – (e2 * ((sin(Enlem * ((PI) / 180)))^2))));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N; */
+			Enlem = (atan((Z + e2 * N * sin(Enlem * ((PI) / 180))) / pow((pow(X, 2) + pow(Y, 2)), 0.5))) * (180 / (PI));
+			printf("Enlem: %f\n", Enlem);
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			printf("Boylam: %f\n", Boylam);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N;
+			printf("Elipsoid yüksekliği: %f\n", H);
 		}
 		/* WGS84 parametreleri;
 		a = 6378137;
@@ -205,6 +218,19 @@ int main()
 				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
 				printf("Enlem: \n", Enlem);
 			}
+				/* Farklı Datumlarda Coğrafi Koordinatlar Hesaplanır (ED50, WGS84, GRS80)
+			Enlem( φ), Boylam (λ), Elipsoid Yüksekliği (H)
+			Enlem = (atan((Z + e2 * N9 * sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI));
+			N = a / (Sqrt(1 – (e2 * ((sin(Enlem * ((PI) / 180)))^2))));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N; */
+			Enlem = (atan((Z + e2 * N * sin(Enlem * ((PI) / 180))) / pow((pow(X, 2) + pow(Y, 2)), 0.5))) * (180 / (PI));
+			printf("Enlem: %f\n", Enlem);
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			printf("Boylam: %f\n", Boylam);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N;
+			printf("Elipsoid yüksekliği: %f\n", H);
 		}
 		/* GRS80 parametreleri;
 		a = 6378137;
@@ -229,18 +255,24 @@ int main()
 				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
 				printf("Enlem: \n", Enlem);
 			}
+				/* Farklı Datumlarda Coğrafi Koordinatlar Hesaplanır (ED50, WGS84, GRS80)
+			Enlem( φ), Boylam (λ), Elipsoid Yüksekliği (H)
+			Enlem = (atan((Z + e2 * N9 * sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI));
+			N = a / (Sqrt(1 – (e2 * ((sin(Enlem * ((PI) / 180)))^2))));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N; */
+			Enlem = (atan((Z + e2 * N * sin(Enlem * ((PI) / 180))) / pow((pow(X, 2) + pow(Y, 2)), 0.5))) * (180 / (PI));
+			printf("Enlem: %f\n", Enlem);
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			Boylam = (atan(Y / X)) * (180 / PI);
+			printf("Boylam: %f\n", Boylam);
+			H = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) - N;
+			printf("Elipsoid yüksekliği: %f\n", H);
 		}
 		else
 		{
 			printf("Yanlış bir değer tuşladınız lütfen baştan yapınız!\n");
 		}
-
-		/* Farklı Datumlarda Coğrafi Koordinatlar Hesaplanır (ED50, WGS84, GRS80)
-		Enlem( φ), Boylam (λ), Elipsoid Yüksekliği (h)
-		Enlem = (atan((Z + e2 * N9 * sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI))
-		N = a / (Sqrt(1 – (e2 * ((sin(Enlem * ((PI) / 180)))^2))));
-		Boylam = (atan(Y / X)) * (180 / PI);
-		h = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) – N; */
 	}
 	else
 	{
