@@ -6,14 +6,32 @@ int main()
 {
 	setlocale(LC_ALL, "Turkish");
 
-
+	double EnlemDer, EnlemDak, EnlemSan, BoylamDer, BoylamDak, BoylamSan;
 
 		//// Coğrafi Koordinatlardan 3 Boyutlu Kartezyen Koordinatlarına Dönüşüm!!!
 	printf(" === Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm! === \n");
 	/// Bilinenleri isteyelim.
+	// Enlem ile boylamı derece, dakika ve saniye olarak isteyelim. Sonra ise dereceye çevirelim.
 	/* ED50, WGS84, GRS80 datumunda coğrafi koordinatlar;
 	Enlem (φ), Boylam (λ), Elipsoid Yüksekliği (h) */
+	printf("Enlem değerinin derecesini giriniz: \n");
+	scanf("%lf", &EnlemDer);
+	printf("Enlem değerinin dakikasını giriniz: \n");
+	scanf("%lf", &EnlemDak);
+	printf("Enlem değerinin saniyesini giriniz: \n");
+	scanf("%lf", &EnlemSan);
+	printf("Boylam değerinin derecesini giriniz: \n");
+	scanf("%lf", &BoylamDer);
+	printf("Boylam değerinin dakikasını giriniz: \n");
+	scanf("%lf", &BoylamDak);
+	printf("Boylam değerinin saniyesini giriniz: \n");
+	scanf("%lf", &BoylamSan);
+	/* Enlem ve Boylam değerlerinin Dereceye dönüştürülmesi;
+	Enlem = dereceφ + (dakikaφ / 60) + (saniyeφ / 3600);
+	Boylam = dereceλ + (dakikaλ / 60) + (saniyeλ / 3600); */
+	
 
+			// if parametrisi kullanılacak!!!
 	/* Datum Parametreleri;
 	ED50 parametreleri;
 	a = 6378388;
@@ -27,11 +45,6 @@ int main()
 	a = 6378137;
 	b = 6356752.298;
 	e2 =(Sqrt(a^2 - b^2) / a^2)^2; */
-
-	/* Enlem ve Boylam değerlerinin Dereceye dönüştürülmesi;
-	Enlem = dereceφ + (dakikaφ / 60) + (saniyeφ / 3600);
-	Boylam = dereceλ + (dakikaλ / 60) + (saniyeλ / 3600); */
-
 
 	// Bilinmeyenlerin hesaplanması.
 	printf("\n === Hesaplar! === \n");
@@ -50,13 +63,13 @@ int main()
 		////  3 Boyutlu Kartezyen Koordinatlardan Coğrafi Koordinatlara Dönüşüm!!!
 	printf(" === 3 Boyutlu Kartezyen Koordinatlardan Coğrafi Koordinatlara Dönüşüm! === \n");
 	/// Bilinenleri isteyelim.
+			// if parametrisi kullanılacak!!!
 	/* Datum parametreleri
-	ED50 parametreleri
-
+	ED50 parametreleri;
 	a = 6378388;
 	b = 6356911.9461;
 	e2 = ((Sqrt(((a^2) - (b^2)) / (a^2)))^2);
-	WGS84 parametreleri
+	WGS84 parametreleri;
 	a = 6378137;
 	b = 6356752.314;
 	e2 =(Sqrt(a^2 - b^2) / a^2)^2;
