@@ -1,6 +1,7 @@
-# Coğrafi koordinatlardan kartezyen koordinatlara dönüşüm **(ED50, WGS84, GRS80)**
+**Coğrafi koordinatlardan kartezyen koordinatlara dönüşüm (ED50, WGS84, GRS80)**
+==
 
-Yazılım Kullanım Rehberi;
+**Kullanımı;**
 
 Yazılımı çalıştırdığınız zaman, 2 hesaplama göreceksiniz. Her bir hesaplama kendi içinde ayrı yapılmaktadır.
 
