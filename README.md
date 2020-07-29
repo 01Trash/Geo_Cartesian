@@ -2,7 +2,7 @@
 
 **Amaç;**
 
-3 boyutlu kartezyen koordinatları ile farklı datumlarda bulunan enlem, boylam ve elipsoid yüksekliği ile ifade edilen coğrafi koordinatlar arasında dönüşüm yapmaya yaramaktadır. (ED50, WGS84, GRS80)
+3 boyutlu kartezyen koordinatları ile farklı datumlarda bulunan enlem, boylam ve elipsoid yüksekliği ile ifade edilen coğrafi koordinatlar arasında dönüşüm yapmak. (ED50, WGS84, GRS80)
 
 **Kullanımı;**
 
