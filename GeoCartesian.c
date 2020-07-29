@@ -48,7 +48,7 @@ int main()
 	printf("Girilen boylam değeri: %f\n", Boylam);
 
 	// Hangi türe dönüştürülmek isteniyor soralım bir.
-	printf("\n=== Lütfen aşağıda belirtildiği gibi değişimin türünü seçiniz! ===\n");
+	printf("\n#=== Lütfen aşağıda belirtildiği gibi değişimin türünü seçiniz! ===#\n");
 	printf("'Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm' için 1,\n");
 	printf("'3 boyutlu kartezyen koordinatlardan coğrafi koordinatlara dönüşüm' için 2, tuşlayınız: ");
 	scanf("%d", &x);
@@ -57,7 +57,7 @@ int main()
 			//// Coğrafi Koordinatlardan 3 Boyutlu Kartezyen Koordinatlarına Dönüşüm!!!
 		printf(" === Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm! === \n");
 		// Hangi datum türü ile hesap yapılacak soralım bakalım bir.
-		printf("\n=== Lütfen aşağıda belirtildiği gibi datumu seçiniz! ===\n");
+		printf("\n#=== Lütfen aşağıda belirtildiği gibi datumu seçiniz! ===#\n");
 		printf("'ED50 datumu' için 1,\n");
 		printf("'WGS84 datumu' için 2,\n");
 		printf("'GRS80 datumu' için 3, tuşlayınız: ");
@@ -99,7 +99,7 @@ int main()
 		}
 
 		// Bilinmeyenlerin hesaplanması.
-		printf("\n === Hesaplar! === \n");
+		printf("\n\t=== Hesap sonuçları! === \n");
 		/* N değerinin hesaplanması
 		N = a / (Sqrt(1 - (e2 * (sin(Enlem * PI / 180))^2))); */
 		N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
@@ -140,7 +140,7 @@ int main()
 		X, Y, Z; */
 
 		/// Bilinmeyenlerin hesaplanması.
-		printf("\n === Hesaplar! === \n");
+		printf("\n\t=== Hesap sonuçları! === \n");
 		/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
 		Enlem0 =Atan(Z / (((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
 		N0 = a / (Sqrt(1 - (e2 * ((Sin(Enlem0 * ((PI) / 180))) ^ 2))));
