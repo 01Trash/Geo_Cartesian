@@ -1,2 +1,9 @@
-# Geo_Cartesian
-Coğrafi koordinatlar ile kartezyen koordinatlar arası dönüşüm (ED50, WGS84, GRS80)
+# Coğrafi koordinatlar ile kartezyen koordinatlar arası dönüşüm (ED50, WGS84, GRS80)
+
+Yazılım Kullanım Rehberi;
+
+Yazılımı çalıştırdığınız zaman, 2 hesaplama göreceksiniz. Her bir hesaplama kendi içinde ayrı yapılmaktadır.
+
+(i) ED50, WGS84, GRS80  datumlarında coğrafi koordinatları derece, dakika ve saniye olarak verilen enlem, boylam değerleri ile elipsoid yüksekliği h değerinin girilmesi gerekmektedir.
+
+(ii) ED50, WGS84, GRS80  datumlarında kartezyen koordinatları X, Y, Z değerlerinin girilmesi gerekmektedir.
