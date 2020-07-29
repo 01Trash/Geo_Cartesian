@@ -12,8 +12,8 @@ int main()
 	double Enlem, Boylam;
 	int x, y;
 	double a, b, e2;
-	//double radiusX, radiusY;
 	double N, X, Y, Z;
+	int i;
 
 	/// Bilinenleri isteyelim.
 	// Enlem ile boylamı derece, dakika ve saniye olarak isteyelim. Sonra ise dereceye çevirelim.
@@ -68,6 +68,24 @@ int main()
 			a = 6378388;
 			b = 6356911.9461;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* N değerinin hesaplanması
+			N = a / (Sqrt(1 - (e2 * (sin(Enlem * PI / 180))^2))); */
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			/* Kartezyen koordinatlarının hesaplanması
+			X, Y, Z;
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));*/
+			//radiusX = (Enlem * ((PI) / 180)) * (PI / 180);
+			//radiusY = (Boylam * ((PI) / 180)) * (PI / 180);
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			printf("X kartezyen değeri: %f\n", X);
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			printf("Y kartezyen değeri: %f\n", Y);
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));
+			printf("Z kartezyen değeri: %f\n", Z);
 		}
 		/* WGS84 parametreleri;
 		a = 6378137;
@@ -78,6 +96,24 @@ int main()
 			a = 6378137;
 			b = 6356752.314;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* N değerinin hesaplanması
+			N = a / (Sqrt(1 - (e2 * (sin(Enlem * PI / 180))^2))); */
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			/* Kartezyen koordinatlarının hesaplanması
+			X, Y, Z;
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));*/
+			//radiusX = (Enlem * ((PI) / 180)) * (PI / 180);
+			//radiusY = (Boylam * ((PI) / 180)) * (PI / 180);
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			printf("X kartezyen değeri: %f\n", X);
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			printf("Y kartezyen değeri: %f\n", Y);
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));
+			printf("Z kartezyen değeri: %f\n", Z);
 		}
 		/* GRS80 parametreleri;
 		a = 6378137;
@@ -88,30 +124,27 @@ int main()
 			a = 6378137;
 			b = 6356752.298;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* N değerinin hesaplanması
+			N = a / (Sqrt(1 - (e2 * (sin(Enlem * PI / 180))^2))); */
+			N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
+			/* Kartezyen koordinatlarının hesaplanması
+			X, Y, Z;
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));*/
+			X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
+			printf("X kartezyen değeri: %f\n", X);
+			Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
+			printf("Y kartezyen değeri: %f\n", Y);
+			Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));
+			printf("Z kartezyen değeri: %f\n", Z);
 		}
 		else
 		{
 			printf("Yanlış bir değer tuşladınız lütfen baştan yapınız!\n");
 		}
-
-		// Bilinmeyenlerin hesaplanması.
-		printf("\n\t=== Hesap sonuçları! === \n");
-		/* N değerinin hesaplanması
-		N = a / (Sqrt(1 - (e2 * (sin(Enlem * PI / 180))^2))); */
-		N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), (0.5)));
-		/* Kartezyen koordinatlarının hesaplanması
-		X, Y, Z;
-		X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
-		Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
-		Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));*/
-		//radiusX = (Enlem * ((PI) / 180)) * (PI / 180);
-		//radiusY = (Boylam * ((PI) / 180)) * (PI / 180);
-		X = (N + H) * cos(Enlem * ((PI) / 180)) * cos(Boylam * ((PI) / 180));
-		printf("X kartezyen değeri: %f\n", X);
-		Y = (N + H) * cos(Enlem * ((PI) / 180)) * sin(Boylam * ((PI) / 180));
-		printf("Y kartezyen değeri: %f\n", Y);
-		Z = ((1 - e2) * N + H) * (sin(Enlem * ((PI) / 180)));
-		printf("Z kartezyen değeri: %f\n", Z);
 	}
 	else if (x == 2)
 	{
@@ -134,6 +167,20 @@ int main()
 			a = 6378388;
 			b = 6356911.9461;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				/// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
+			Enlem0 = atan(Z / (((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N0 = a / (Sqrt(1 - (e2 * ((sin(Enlem0 * ((PI) / 180))) ^ 2))));
+			Enlem1 = (atan((Z + e2 * N0 * sin(Enlem0 * ((PI) / 180))) / Sqrt((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N1 = a / (Sqrt(1 - (e2 * ((sin(Enlem1 * ((PI) / 180))) ^ 2))));
+			... */
+			for (i == 1; i <= 10; i++)
+			{
+				Enlem = atan(Z / ((pow(X, 2) + pow(Y, 2)))) * (180 / (PI));
+				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
+				printf("Enlem: \n", Enlem);
+			}
 		}
 		/* WGS84 parametreleri;
 		a = 6378137;
@@ -144,6 +191,20 @@ int main()
 			a = 6378137;
 			b = 6356752.314;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				/// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
+			Enlem0 = atan(Z / (((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N0 = a / (Sqrt(1 - (e2 * ((sin(Enlem0 * ((PI) / 180))) ^ 2))));
+			Enlem1 = (atan((Z + e2 * N0 * sin(Enlem0 * ((PI) / 180))) / Sqrt((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N1 = a / (Sqrt(1 - (e2 * ((sin(Enlem1 * ((PI) / 180))) ^ 2))));
+			... */
+			for (i == 1; i <= 10; i++)
+			{
+				Enlem = atan(Z / ((pow(X, 2) + pow(Y, 2)))) * (180 / (PI));
+				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
+				printf("Enlem: \n", Enlem);
+			}
 		}
 		/* GRS80 parametreleri;
 		a = 6378137;
@@ -154,26 +215,32 @@ int main()
 			a = 6378137;
 			b = 6356752.298;
 			e2 =pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+				/// Bilinmeyenlerin hesaplanması.
+			printf("\n\t=== Hesap sonuçları! === \n");
+			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
+			Enlem0 = atan(Z / (((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N0 = a / (Sqrt(1 - (e2 * ((sin(Enlem0 * ((PI) / 180))) ^ 2))));
+			Enlem1 = (atan((Z + e2 * N0 * sin(Enlem0 * ((PI) / 180))) / Sqrt((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
+			N1 = a / (Sqrt(1 - (e2 * ((sin(Enlem1 * ((PI) / 180))) ^ 2))));
+			... */
+			for (i == 1; i <= 10; i++)
+			{
+				Enlem = atan(Z / ((pow(X, 2) + pow(Y, 2)))) * (180 / (PI));
+				N = a / (pow(1 - (e2 * pow((sin(Enlem * PI / 180)), 2)), 0.5));
+				printf("Enlem: \n", Enlem);
+			}
 		}
 		else
 		{
 			printf("Yanlış bir değer tuşladınız lütfen baştan yapınız!\n");
 		}
 
-		/// Bilinmeyenlerin hesaplanması.
-		printf("\n\t=== Hesap sonuçları! === \n");
-		/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
-		Enlem0 =Atan(Z / (((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
-		N0 = a / (Sqrt(1 - (e2 * ((Sin(Enlem0 * ((PI) / 180))) ^ 2))));
-		Enlem1 = (Atan((Z + e2 * N0 * Sin(Enlem0 * ((PI) / 180))) / Sqrt((X ^ 2) + (Y ^ 2)))) * (180 / (PI));
-		N1 = a / (Sqrt(1 - (e2 * ((Sin(Enlem1 * ((PI) / 180))) ^ 2)))); */
-
 		/* Farklı Datumlarda Coğrafi Koordinatlar Hesaplanır (ED50, WGS84, GRS80)
 		Enlem( φ), Boylam (λ), Elipsoid Yüksekliği (h)
-		Enlem = (Atan((Z + e2 * N9 * Sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI))
-		N = a / (Sqrt(1 – (e2 * ((Sin(Enlem * ((PI) / 180)))^2))));
-		Boylam = (Atan(Y / X)) * (180 / PI);
-		h = (X / ((Cos(Enlem * ((PI) / 180))) * (Cos(Boylam * ((PI) / 180))))) – N; */
+		Enlem = (atan((Z + e2 * N9 * sin(Enlem9 * ((PI) / 180))) / Sqrt((X^2) + (Y^2)))) * (180 / (PI))
+		N = a / (Sqrt(1 – (e2 * ((sin(Enlem * ((PI) / 180)))^2))));
+		Boylam = (atan(Y / X)) * (180 / PI);
+		h = (X / ((cos(Enlem * ((PI) / 180))) * (cos(Boylam * ((PI) / 180))))) – N; */
 	}
 	else
 	{
