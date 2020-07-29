@@ -1,4 +1,4 @@
-# Coğrafi koordinatlardan kartezyen koordinatlara dönüşüm (ED50, WGS84, GRS80)
+# Coğrafi koordinatlar ile kartezyen koordinatlar arası dönüşüm (ED50, WGS84, GRS80)
 
 **Amaç;**
 
