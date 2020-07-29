@@ -15,34 +15,6 @@ int main()
 	double N, X, Y, Z;
 	int i;
 
-	/// Bilinenleri isteyelim.
-	// Enlem ile boylamı derece, dakika ve saniye olarak isteyelim. Sonra ise dereceye çevirelim.
-	/* ED50, WGS84, GRS80 datumunda coğrafi koordinatlar;
-	Enlem, Boylam, Elipsoid yüksekliği. */
-	printf("Enlem derece değerini giriniz: ");
-	scanf("%lf", &EnlemDer);
-	printf("Enlem dakika değerini giriniz: ");
-	scanf("%lf", &EnlemDak);
-	printf("Enlem saniye değerinin giriniz: ");
-	scanf("%lf", &EnlemSan);
-	printf("Boylam derece değerini giriniz: ");
-	scanf("%lf", &BoylamDer);
-	printf("Boylam dakika değerini giriniz: ");
-	scanf("%lf", &BoylamDak);
-	printf("Boylam saniye değerini giriniz: ");
-	scanf("%lf", &BoylamSan);
-	printf("Elipsoid yüksekliği değerini giriniz: ");
-	scanf("%lf", &H);
-	/* Enlem ve Boylam değerlerinin Dereceye dönüştürülmesi;
-	Enlem = EnlemDer + (EnlemDak / 60) + (EnlemSan / 3600);
-	Boylam = BoylamDer + (BoylamDak / 60) + (BoylamSan / 3600);*/
-	Enlem = EnlemDer + (EnlemDak / 60) + (EnlemSan / 3600);
-	//Burada mod alma yapılabilir!
-	printf("Girilen enlem değeri: %f\n", Enlem);
-	Boylam = BoylamDer + (BoylamDak / 60) + (BoylamSan / 3600);
-	//Burada mod alma yapılabilir!
-	printf("Girilen boylam değeri: %f\n", Boylam);
-
 	// Hangi türe dönüştürülmek isteniyor soralım bir.
 	printf("\n#=== Lütfen aşağıda belirtildiği gibi değişimin türünü seçiniz! ===#\n");
 	printf("'Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm' için 1,\n");
@@ -50,6 +22,34 @@ int main()
 	scanf("%d", &x);
 	if (x == 1)
 	{
+			/// Bilinenleri isteyelim.
+		// Enlem ile boylamı derece, dakika ve saniye olarak isteyelim. Sonra ise dereceye çevirelim.
+		/* ED50, WGS84, GRS80 datumunda coğrafi koordinatlar;
+		Enlem, Boylam, Elipsoid yüksekliği. */
+		printf("Enlem derece değerini giriniz: ");
+		scanf("%lf", &EnlemDer);
+		printf("Enlem dakika değerini giriniz: ");
+		scanf("%lf", &EnlemDak);
+		printf("Enlem saniye değerinin giriniz: ");
+		scanf("%lf", &EnlemSan);
+		printf("Boylam derece değerini giriniz: ");
+		scanf("%lf", &BoylamDer);
+		printf("Boylam dakika değerini giriniz: ");
+		scanf("%lf", &BoylamDak);
+		printf("Boylam saniye değerini giriniz: ");
+		scanf("%lf", &BoylamSan);
+		printf("Elipsoid yüksekliği değerini giriniz: ");
+		scanf("%lf", &H);
+		/* Enlem ve Boylam değerlerinin Dereceye dönüştürülmesi;
+		Enlem = EnlemDer + (EnlemDak / 60) + (EnlemSan / 3600);
+		Boylam = BoylamDer + (BoylamDak / 60) + (BoylamSan / 3600);*/
+		Enlem = EnlemDer + (EnlemDak / 60) + (EnlemSan / 3600);
+		//Burada mod alma yapılabilir!
+		printf("Girilen enlem değeri: %f\n", Enlem);
+		Boylam = BoylamDer + (BoylamDak / 60) + (BoylamSan / 3600);
+		//Burada mod alma yapılabilir!
+		printf("Girilen boylam değeri: %f\n", Boylam);
+		
 			//// Coğrafi Koordinatlardan 3 Boyutlu Kartezyen Koordinatlarına Dönüşüm!!!
 		printf(" === Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm! === \n");
 		// Hangi datum türü ile hesap yapılacak soralım bakalım bir.
