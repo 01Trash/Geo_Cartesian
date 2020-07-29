@@ -49,7 +49,7 @@ int main()
 		Boylam = BoylamDer + (BoylamDak / 60) + (BoylamSan / 3600);
 		//Burada mod alma yapılabilir!
 		printf("Girilen boylam değeri: %f\n", Boylam);
-		
+
 			//// Coğrafi Koordinatlardan 3 Boyutlu Kartezyen Koordinatlarına Dönüşüm!!!
 		printf(" === Coğrafi koordinatlardan 3 boyutlu kartezyen koordinatlarına dönüşüm! === \n");
 		// Hangi datum türü ile hesap yapılacak soralım bakalım bir.
@@ -148,6 +148,15 @@ int main()
 	}
 	else if (x == 2)
 	{
+			/// Bilinenleri isteyelim.
+		/*  Kartezyen Koordinatları
+		X, Y, Z; */
+		printf("X kartezyen değerini giriniz: ");
+		scanf("%lf", &X);
+		printf("Y kartezyen değerini giriniz: ");
+		scanf("%lf", &Y);
+		printf("Z kartezyen değerinin giriniz: ");
+		scanf("%lf", &Z);
 			////  3 Boyutlu Kartezyen Koordinatlardan Coğrafi Koordinatlara Dönüşüm!!!
 		printf(" === 3 boyutlu kartezyen koordinatlardan coğrafi koordinatlara dönüşüm! === \n");
 				// if parametrisi kullanılacak!!!
