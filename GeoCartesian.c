@@ -67,7 +67,7 @@ int main()
 		{
 			a = 6378388;
 			b = 6356911.9461;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* N değerinin hesaplanması
@@ -95,7 +95,7 @@ int main()
 		{
 			a = 6378137;
 			b = 6356752.314;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* N değerinin hesaplanması
@@ -123,7 +123,7 @@ int main()
 		{
 			a = 6378137;
 			b = 6356752.298;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* N değerinin hesaplanması
@@ -175,7 +175,7 @@ int main()
 		{
 			a = 6378388;
 			b = 6356911.9461;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				/// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
@@ -212,7 +212,7 @@ int main()
 		{
 			a = 6378137;
 			b = 6356752.314;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				/// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
@@ -249,7 +249,7 @@ int main()
 		{
 			a = 6378137;
 			b = 6356752.298;
-			e2 = pow((pow((pow(a, 2) - pow(b, 2)), 0.5) / pow(a, 2)), 2);
+			e2 = pow((pow(((pow(a, 2) - pow(b, 2)) / pow(a, 2)), 0.5)), 2);
 				/// Bilinmeyenlerin hesaplanması.
 			printf("\n\t=== Hesap sonuçları! === \n");
 			/* Coğrafi Koordinatı olan Enlem değerine 10 kez basit iterasyon yapılır.
